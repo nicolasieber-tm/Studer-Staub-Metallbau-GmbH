@@ -1,0 +1,12 @@
+{
+  "name": "studer-staub-metallbau",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Webseiten-Skizze Studer & Staub Metallbau GmbH",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
