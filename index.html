@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studer &amp; Staub Metallbau Zuchwil – Die Eisenmänner | Schlosserei Solothurn</title>
+<meta name="description" content="Studer & Staub Metallbau Zuchwil, Solothurn: Metallbau- und Schlossereiarbeiten wie Treppe, Geländer, Vordach, Balkon, Türe, Chromstahl. Termin direkt online buchen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#23262b;        /* anthrazit Fassade */
+  --wall-2:#1b1d21;      /* dunkler */
+  --wall-3:#15171a;
+  --panel:#2b2f36;
+  --panel-2:#31363e;
+  --ink:#f4f0e7;         /* gemalte weisse Farbe */
+  --ink-dim:#b4b1a8;
+  --ink-mute:#84878d;
+  --orange:#ee7a1e;      /* Graffiti-Orange */
+  --orange-2:#f59b3c;
+  --orange-deep:#d9620c;
+  --steel:#9aa1a8;
+  --line:rgba(244,240,231,.12);
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:"Barlow",system-ui,Arial,sans-serif;color:var(--ink);
+  background:var(--wall);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+/* Metall-Fassaden-Textur: feine vertikale Panel-Fugen */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    linear-gradient(180deg,#262a30,#1f2227 60%,#191b1f);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 118px,rgba(0,0,0,.22) 118px 120px),
+    radial-gradient(circle at 20% 10%,rgba(238,122,30,.06),transparent 45%);
+}
+h1,h2,h3,.display{font-family:"Anton","Barlow Condensed",Impact,sans-serif;font-weight:400;letter-spacing:.5px;line-height:.98;text-transform:uppercase;margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.eyebrow{font-family:"Barlow Condensed";text-transform:uppercase;letter-spacing:3px;font-weight:700;color:var(--orange);font-size:.92rem;margin:0 0 10px}
+.spark{display:inline-block;width:1.1em;height:1.1em;vertical-align:-.18em;filter:drop-shadow(0 0 6px rgba(238,122,30,.5))}
+
+/* ---------- Drips ---------- */
+.drips{display:block;width:100%;height:38px;margin:0}
+.drips path{fill:var(--wall)}
+
+/* ---------- NAV ---------- */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(21,23,26,.82);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:18px;height:70px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mask{width:38px;height:38px;flex:0 0 auto}
+.brand b{font-family:"Anton";font-size:1.35rem;letter-spacing:1px;line-height:.9}
+.brand small{display:block;font-family:"Barlow Condensed";font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink-dim);font-size:.62rem;margin-top:2px}
+.nav-links{margin-left:auto;display:flex;gap:24px;align-items:center}
+.nav-links a{font-family:"Barlow Condensed";font-weight:600;text-transform:uppercase;letter-spacing:1.5px;font-size:.95rem;color:var(--ink-dim);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;letter-spacing:1.5px;
+  padding:12px 20px;border-radius:2px;cursor:pointer;border:0;font-size:.95rem;transition:transform .12s,box-shadow .2s,background .2s}
+.btn-primary{background:var(--orange);color:#1a1206;box-shadow:0 6px 0 var(--orange-deep)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--orange-deep)}
+.btn-primary:active{transform:translateY(3px);box-shadow:0 2px 0 var(--orange-deep)}
+.btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--wall)}
+.nav-phone{font-family:"Barlow Condensed";font-weight:700;letter-spacing:1px;color:var(--ink)}
+.burger{display:none;margin-left:auto;background:none;border:0;color:var(--ink);cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(21,23,26,.80),rgba(21,23,26,.88)),url('assets/graffiti.jpg');
+  background-size:cover;background-position:center;}
+.hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center;
+  display:flex;flex-direction:column;align-items:center;padding:88px 0 44px}
+.hero h1{font-size:clamp(2.7rem,6vw,5rem);color:var(--ink)}
+.hero h1 .stroke{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.hero h1 .o{color:var(--orange)}
+.hero p.lead{font-size:1.18rem;color:var(--ink-dim);max-width:52ch;margin:22px auto 8px}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;justify-content:center}
+.tagstrip{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;justify-content:center}
+.tag{font-family:"Barlow Condensed";font-weight:600;text-transform:uppercase;letter-spacing:1.5px;font-size:.82rem;
+  border:1px solid var(--line);color:var(--ink-dim);padding:6px 12px;border-radius:2px;background:rgba(255,255,255,.02)}
+.hero-art{position:relative}
+.hero-photo{position:relative;border:3px solid var(--ink);box-shadow:14px 14px 0 rgba(0,0,0,.4);transform:rotate(-1.2deg)}
+.hero-photo img{width:100%;aspect-ratio:4/3.05;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
+.hero-photo figcaption{position:absolute;left:-3px;bottom:-3px;background:var(--orange);color:#1a1206;
+  font-family:"Barlow Condensed";font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:.78rem;padding:7px 13px}
+.burst{position:absolute;top:40px;right:6%;z-index:1;width:118px;height:118px;animation:spin 26s linear infinite;opacity:.92}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- SECTION ---------- */
+section{position:relative;padding:74px 0}
+.sec-head{margin-bottom:38px;max-width:760px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.3rem);color:var(--ink)}
+.sec-head h2 .o{color:var(--orange)}
+.sec-head p{color:var(--ink-dim);font-size:1.08rem;margin:14px 0 0}
+.band{background:var(--wall-2)}
+.band-dark{background:var(--wall-3)}
+
+/* ---------- ANGEBOT ---------- */
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:26px 24px;position:relative;overflow:hidden;transition:transform .15s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(238,122,30,.55)}
+.card .num{font-family:"Anton";font-size:2.6rem;color:rgba(244,240,231,.10);position:absolute;top:8px;right:16px}
+.card h3{font-size:1.35rem;color:var(--ink);margin-bottom:8px}
+.card p{color:var(--ink-dim);margin:0;font-size:.98rem}
+.card .ico{width:34px;height:34px;margin-bottom:14px;color:var(--orange)}
+
+/* ---------- REFERENZEN ---------- */
+.ref-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.ref{position:relative;overflow:hidden;border-radius:3px;border:1px solid var(--line);aspect-ratio:1/1;background:var(--panel);
+  display:block;width:100%;padding:0;cursor:pointer;font:inherit;color:inherit;text-align:left}
+.ref img{width:100%;height:100%;object-fit:cover;transition:transform .5s, filter .3s;filter:saturate(.96) brightness(.92)}
+.ref:hover img{transform:scale(1.08);filter:saturate(1.1) brightness(1)}
+.ref::after{content:"+";position:absolute;top:10px;right:10px;z-index:3;width:30px;height:30px;display:flex;align-items:center;justify-content:center;
+  background:var(--orange);color:#1a1206;font-family:"Anton";font-size:1.3rem;line-height:1;border-radius:50%;opacity:0;transform:scale(.6);transition:.2s}
+.ref:hover::after,.ref:focus-visible::after{opacity:1;transform:scale(1)}
+.ref:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.ref .lbl{position:absolute;left:0;bottom:0;right:0;padding:34px 14px 12px;
+  background:linear-gradient(180deg,transparent,rgba(15,17,20,.92));
+  font-family:"Anton";text-transform:uppercase;letter-spacing:.5px;font-size:1.18rem}
+.ref .lbl::before{content:"";display:inline-block;width:18px;height:3px;background:var(--orange);margin-right:8px;vertical-align:middle}
+
+/* ---------- TEAM ---------- */
+.team-banner{position:relative;border:3px solid var(--ink);margin-bottom:40px;overflow:hidden;box-shadow:10px 10px 0 rgba(0,0,0,.35)}
+.team-banner img{width:100%;height:300px;object-fit:cover;object-position:center 30%}
+.team-banner .cap{position:absolute;left:0;bottom:0;background:var(--orange);color:#1a1206;font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:8px 16px;font-size:.85rem}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:44px}
+.story .blk{background:var(--panel);border-left:3px solid var(--orange);padding:22px 24px;border-radius:0 3px 3px 0}
+.story h3{font-size:1.25rem;margin-bottom:8px}
+.story p{margin:0;color:var(--ink-dim);font-size:.98rem}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.member{text-align:center}
+.member .ph{position:relative;aspect-ratio:1/1;border-radius:3px;overflow:hidden;border:2px solid var(--line);background:var(--panel-2)}
+.member .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.03)}
+.member:hover .ph{border-color:var(--orange)}
+.member .ph.initials{display:flex;align-items:center;justify-content:center;font-family:"Anton";font-size:2.6rem;color:var(--orange);background:repeating-linear-gradient(45deg,#2b2f36 0 10px,#30343c 10px 20px)}
+.member b{display:block;font-family:"Barlow Condensed";font-weight:700;font-size:1.12rem;text-transform:uppercase;letter-spacing:.5px;margin-top:12px}
+.member small{display:block;color:var(--ink-mute);font-size:.86rem}
+.member .role{color:var(--orange);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;margin-top:3px;font-family:"Barlow Condensed"}
+
+/* ---------- TERMIN ---------- */
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.book-panel{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px}
+.book-panel h3{font-size:1.2rem;margin-bottom:4px}
+.book-panel .hint{color:var(--ink-mute);font-size:.9rem;margin:0 0 16px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-head .m{font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:1.15rem}
+.cal-nav{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);width:36px;height:36px;border-radius:3px;cursor:pointer;font-size:1.1rem}
+.cal-nav:hover{border-color:var(--orange);color:var(--orange)}
+.cal-nav:disabled{opacity:.3;cursor:not-allowed}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal .dow{font-family:"Barlow Condensed";font-weight:700;text-align:center;color:var(--ink-mute);font-size:.78rem;text-transform:uppercase;padding:4px 0}
+.cal button.day{aspect-ratio:1/1;border:1px solid var(--line);background:var(--panel-2);color:var(--ink);border-radius:3px;cursor:pointer;font-family:"Barlow";font-weight:600;font-size:.95rem;transition:.12s}
+.cal button.day:hover:not(:disabled){border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
+.cal button.day.sel{background:var(--orange);color:#1a1206;border-color:var(--orange);font-weight:700}
+.cal button.day:disabled{opacity:.22;cursor:not-allowed}
+.cal .empty{aspect-ratio:1/1}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;min-height:44px}
+.slot{font-family:"Barlow Condensed";font-weight:600;letter-spacing:1px;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);padding:9px 14px;border-radius:3px;cursor:pointer;font-size:.95rem}
+.slot:hover:not(:disabled){border-color:var(--orange);color:var(--orange)}
+.slot.sel{background:var(--orange);color:#1a1206;border-color:var(--orange)}
+.slot:disabled{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+.slot-empty{color:var(--ink-mute);font-size:.92rem;align-self:center}
+.field{margin-bottom:14px}
+.field label{display:block;font-family:"Barlow Condensed";font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:.82rem;color:var(--ink-dim);margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;background:var(--wall-2);border:1px solid var(--line);color:var(--ink);
+  padding:11px 13px;border-radius:3px;font-family:"Barlow";font-size:1rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
+.field textarea{resize:vertical;min-height:84px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.summary{background:var(--wall-2);border:1px dashed var(--orange);border-radius:4px;padding:14px 16px;margin:6px 0 16px;font-size:.96rem}
+.summary b{color:var(--orange)}
+.summary.empty{border-style:solid;border-color:var(--line);color:var(--ink-mute)}
+.note{font-size:.82rem;color:var(--ink-mute);margin-top:10px}
+.ok-msg{background:rgba(238,122,30,.12);border:1px solid var(--orange);border-radius:4px;padding:14px 16px;margin-top:14px;display:none}
+.ok-msg.show{display:block}
+/* Bestätigung nach Buchung */
+.booked{text-align:center;padding:14px 4px 6px;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.booked-check{margin-bottom:8px}
+.booked-sub{color:var(--orange);font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;letter-spacing:2px;margin:2px 0 18px}
+.booked-card{background:var(--wall-2);border:1px solid var(--line);border-radius:4px;padding:6px 18px;text-align:left;margin:0 0 18px}
+.booked-row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.booked-row:last-child{border-bottom:0}
+.booked-row span{color:var(--ink-mute);font-family:"Barlow Condensed";font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:.85rem}
+.booked-row b{text-align:right}
+.booked-note{font-size:.9rem;color:var(--ink-dim)}
+.booked-note a:hover{color:var(--orange)}
+/* ---------- MODAL / OVERLAY ---------- */
+.modal-ov{position:fixed;inset:0;z-index:100;background:rgba(11,12,14,.80);backdrop-filter:blur(5px);
+  display:none;align-items:flex-start;justify-content:center;padding:5vh 20px;overflow-y:auto}
+.modal-ov.open{display:flex;animation:ovIn .2s ease}
+@keyframes ovIn{from{opacity:0}to{opacity:1}}
+.modal{position:relative;width:100%;max-width:940px;background:var(--wall);border:1px solid var(--line);
+  border-top:4px solid var(--orange);border-radius:5px;box-shadow:0 30px 90px rgba(0,0,0,.65);animation:mIn .25s ease}
+@keyframes mIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:12px;right:12px;z-index:4;width:42px;height:42px;border-radius:3px;border:1px solid var(--line);
+  background:var(--panel);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;transition:.15s}
+.modal-close:hover{background:var(--orange);color:#1a1206;border-color:var(--orange)}
+.modal-hero{position:relative;height:200px;overflow:hidden;border-radius:5px 5px 0 0}
+.modal-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(1.05)}
+.modal-hero .htitle{position:absolute;left:0;bottom:0;padding:26px 30px 16px;right:0;
+  background:linear-gradient(180deg,transparent,rgba(21,23,26,.95))}
+.modal-hero .htitle .eyebrow{margin-bottom:4px}
+.modal-hero .htitle h3{font-size:clamp(1.7rem,3.6vw,2.4rem);color:var(--ink)}
+.modal-body{padding:24px 30px 30px}
+.modal-body p{color:var(--ink-dim);font-size:1.04rem;margin:0 0 14px}
+.modal-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 6px}
+.modal-gallery img{width:100%;height:190px;object-fit:cover;border-radius:3px;border:1px solid var(--line);background:var(--panel)}
+.modal-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+body.no-scroll{overflow:hidden}
+@media(max-width:640px){.modal-gallery{grid-template-columns:1fr 1fr}.modal-gallery img{height:150px}.modal-hero{height:150px}}
+
+/* ---------- KONTAKT ---------- */
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:30px}
+.contact-card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:26px}
+.contact-card h3{font-size:1.3rem;margin-bottom:14px}
+.cline{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.cline .ico{color:var(--orange);width:22px;flex:0 0 auto;margin-top:3px}
+.cline b{font-family:"Barlow Condensed";font-weight:700;letter-spacing:.5px}
+.cline a:hover{color:var(--orange)}
+.persons{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.person{background:var(--wall-2);border:1px solid var(--line);border-radius:3px;padding:14px}
+.person b{display:block;font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.person a{display:block;color:var(--ink-dim);font-size:.92rem;margin-top:4px}
+.person a:hover{color:var(--orange)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--wall-3);border-top:1px solid var(--line);padding:46px 0 26px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:28px}
+footer h4{font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--ink);font-size:.95rem;margin:0 0 12px}
+footer a,footer p{color:var(--ink-mute);font-size:.92rem}
+footer a:hover{color:var(--orange)}
+footer li{list-style:none;margin-bottom:7px}
+footer ul{padding:0;margin:0}
+.foot-bottom{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--ink-mute);font-size:.84rem}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .offer-grid{grid-template-columns:1fr 1fr}
+  .ref-grid{grid-template-columns:1fr 1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .book-grid,.contact-grid,.story{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:560px){
+  .offer-grid,.ref-grid,.team-grid,.persons,.two{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .burst{width:92px;height:92px;top:-20px;right:-10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <!-- Schweissermaske als Markenzeichen, abgeleitet vom Graffiti -->
+      <svg class="mask" viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="14" y="6" width="36" height="50" rx="14" fill="none" stroke="#f4f0e7" stroke-width="3"/>
+        <rect x="20" y="22" width="24" height="13" rx="3" fill="none" stroke="#ee7a1e" stroke-width="3"/>
+        <line x1="26" y1="28.5" x2="38" y2="28.5" stroke="#f4f0e7" stroke-width="2.5"/>
+        <path d="M22 56 L20 62 M42 56 L44 62" stroke="#ee7a1e" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span>
+        <b>EISENMÄNNER</b>
+        <small>Studer &amp; Staub Metallbau</small>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#angebot">Angebot</a>
+      <a href="#referenzen">Referenzen</a>
+      <a href="#team">Team</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-primary" href="#termin">Termin buchen</a>
+    </nav>
+    <a class="btn btn-primary burger" href="#termin">Termin</a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<a id="top"></a>
+<section class="hero" style="padding-bottom:0">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <p class="eyebrow">Metallbau &amp; Schlosserei · Zuchwil · Solothurn</p>
+      <h1>Studer &amp; Staub<br><span class="o">Metallbau</span> <span class="stroke">Zuchwil</span></h1>
+      <p class="lead">Unser Metallbaubetrieb ist spezialisiert auf Metallbau- und Schlossereiarbeiten wie Geländer, Treppen, Balkone, Türen und Fenster, Carports und Vordächer.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#termin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+          Termin buchen
+        </a>
+        <a class="btn btn-ghost" href="#angebot">Unser Angebot</a>
+      </div>
+      <div class="tagstrip">
+        <span class="tag">Geländer</span><span class="tag">Treppen</span><span class="tag">Balkone</span>
+        <span class="tag">Vordächer</span><span class="tag">Carports</span><span class="tag">Webnet</span>
+        <span class="tag">Chromstahl</span><span class="tag">Blecharbeiten</span><span class="tag">Stahlbau</span>
+      </div>
+    </div>
+  </div>
+  <svg class="drips" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 0 H1200 V14 C1150 14 1150 40 1120 40 C1090 40 1095 14 1060 14 C1000 14 1005 30 970 30 C940 30 945 14 900 14
+      C840 14 845 38 815 38 C788 38 792 14 740 14 C680 14 690 28 650 28 C618 28 624 14 560 14 C500 14 510 40 478 40
+      C452 40 458 14 400 14 C340 14 348 30 308 30 C276 30 286 14 220 14 C160 14 168 38 138 38 C110 38 118 14 60 14
+      C30 14 34 26 0 22 Z"/>
+  </svg>
+</section>
+
+<!-- ========== ANGEBOT ========== -->
+<section id="angebot" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Unser Angebot</p>
+      <h2>Vom Plan bis zur <span class="o">Montage</span></h2>
+      <p>Studer &amp; Staub Metallbau führt allgemeine Metallbau- und Schlossereiarbeiten in Stahl und Chromstahl aus – in kleinen und grösseren Dimensionen, von der Planung über die Produktion bis zur Montage. Wir sind nicht auf Normprodukte spezialisiert: Unsere Stärke liegt in der individuellen Umsetzung von Kundenwünschen.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="card"><span class="num">01</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V5l9-3 9 3v16M3 21h18M8 21v-6h8v6M9 9h.01M15 9h.01"/></svg>
+        <h3>Metallbau &amp; Schlosserei</h3>
+        <p>Geländer, Treppen für innen und aussen, Balkone, Türen und Fenster, Carports und Vordächer – individuell gefertigt.</p>
+      </div>
+      <div class="card"><span class="num">02</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V8l6-4 6 4v12M9 20v-5h6v5"/></svg>
+        <h3>Stahlbau</h3>
+        <p>Wir planen und produzieren kleinere Stahlbauten – durchdacht konstruiert und sauber verarbeitet.</p>
+      </div>
+      <div class="card"><span class="num">03</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 7l7-5 7 5M5 7v10l7 5 7-5V7"/></svg>
+        <h3>Chromstahl</h3>
+        <p>Arbeiten in Chromstahl für langlebige, hochwertige Lösungen im Innen- und Aussenbereich.</p>
+      </div>
+      <div class="card"><span class="num">04</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z M3 9h18M9 3v18M15 3v18"/></svg>
+        <h3>Webnet-Geländer</h3>
+        <p>Wir sind Spezialisten für Geländer aus Webnet – filigran, sicher und optisch leicht.</p>
+      </div>
+      <div class="card"><span class="num">05</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7l10-4 10 4-10 4z M2 7v10l10 4 10-4V7"/></svg>
+        <h3>Blecharbeiten</h3>
+        <p>Mit Schere und Presse verfügen wir an unserem Standort in Zuchwil über zwei Blechbearbeitungsmaschinen für verschiedenste Blecharbeiten.</p>
+      </div>
+      <div class="card"><span class="num">06</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+        <h3>Individuelle Umsetzung</h3>
+        <p>Zu unserem Kundenstamm gehören sowohl Architekten wie auch private Bauherren – jedes Projekt nach Mass.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REFERENZEN ========== -->
+<section id="referenzen">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Referenzen</p>
+      <h2>Lassen Sie sich <span class="o">inspirieren</span></h2>
+      <p>Lassen Sie sich von unseren Referenzen für Ihr nächstes Projekt inspirieren.</p>
+    </div>
+    <div class="ref-grid">
+      <button class="ref" type="button" data-cat="balkon"><img src="assets/ref/balkon.jpg" alt="Balkon aus Metall"><span class="lbl">Balkone</span></button>
+      <button class="ref" type="button" data-cat="treppe"><img src="assets/ref/treppe.jpg" alt="Metalltreppe"><span class="lbl">Treppen</span></button>
+      <button class="ref" type="button" data-cat="gelaender"><img src="assets/ref/gelaender.jpg" alt="Metallgeländer"><span class="lbl">Geländer</span></button>
+      <button class="ref" type="button" data-cat="vordach"><img src="assets/ref/vordach.jpg" alt="Vordach aus Metall"><span class="lbl">Vordächer</span></button>
+      <button class="ref" type="button" data-cat="carport"><img src="assets/ref/carport.jpg" alt="Carport aus Metall"><span class="lbl">Carports</span></button>
+      <button class="ref" type="button" data-cat="webnet"><img src="assets/ref/webnet.jpg" alt="Webnet-Geländer"><span class="lbl">Webnet</span></button>
+      <button class="ref" type="button" data-cat="tueren"><img src="assets/ref/tueren.jpg" alt="Türen und Fenster aus Metall"><span class="lbl">Türen + Fenster</span></button>
+      <button class="ref" type="button" data-cat="pergola"><img src="assets/ref/pergola.jpg" alt="Pergola aus Metall"><span class="lbl">Pergolas</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TEAM ========== -->
+<section id="team" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" style="margin-bottom:22px">Portrait · Ihre Eisenmänner</p>
+      <h2>Fünf Metallbauer, <span class="o">ein Handwerk</span></h2>
+      <p>Nach mehrjähriger enger Zusammenarbeit haben sich die Gebr. Studer Metallbau GmbH in Luterbach und Staub Metallbau in Zuchwil Anfang 2019 zur Firma Studer &amp; Staub Metallbau GmbH zusammengeschlossen. Unser Team besteht aus fünf gelernten Metallbauern sowie einem Metallbaupraktiker.</p>
+    </div>
+
+    <div class="team-banner">
+      <img src="assets/team/team-gl.jpg" alt="Geschäftsleitung Studer & Staub Metallbau in der Werkstatt">
+      <span class="cap">Geschäftsleitung in der neuen Halle am Schützenweg 1</span>
+    </div>
+
+    <div class="story">
+      <div class="blk">
+        <h3>staub.metallbau</h3>
+        <p>Bereits seit 1995 arbeitet Benjamin Staub selbständig als Metallbauer. Im Jahr 2006 gründete er seine Firma Staub Metallbau am Emmenweg in Zuchwil. Dieser Standort blieb bis zur Fertigstellung des Neubaus am Schützenweg auch nach dem Zusammenschluss erhalten.</p>
+      </div>
+      <div class="blk">
+        <h3>Gebr. Studer Metallbau</h3>
+        <p>Die Gebr. Studer Metallbau GmbH wurde 2012 von den gelernten Metallbauern Jonas und Gabriel Studer gegründet. Seit 2012 übernimmt Judith Gerwald administrative Arbeiten, 2017 stiess Christof Loosli zum Team. Ab 2019 absolvierte Sultan Sajjadi die Ausbildung zum Metallbaupraktiker und arbeitet weiterhin im Betrieb.</p>
+      </div>
+    </div>
+
+    <div class="team-grid">
+      <div class="member"><div class="ph"><img src="assets/team/gabriel.jpg" alt="Gabriel Studer"></div><b>Gabriel Studer</b><span class="role">Geschäftsleitung</span><small>Metallbauer EFZ</small></div>
+      <div class="member"><div class="ph"><img src="assets/team/benjamin.jpg" alt="Benjamin Staub"></div><b>Benjamin Staub</b><span class="role">Geschäftsleitung</span><small>Metallbauer EFZ</small></div>
+      <div class="member"><div class="ph"><img src="assets/team/jonas.jpg" alt="Jonas Studer"></div><b>Jonas Studer</b><span class="role">Geschäftsleitung</span><small>Metallbauer EFZ</small></div>
+      <div class="member"><div class="ph"><img src="assets/team/christoph.jpg" alt="Christoph Loosli"></div><b>Christoph Loosli</b><span class="role">Werkstatt</span><small>Metallbauer EFZ</small></div>
+      <div class="member"><div class="ph"><img src="assets/team/juan.jpg" alt="Juan Noguera"></div><b>Juan Noguera</b><span class="role">Werkstatt</span><small>Metallbauer EFZ</small></div>
+      <div class="member"><div class="ph"><img src="assets/team/sultan.jpg" alt="Sultan Sajjadi"></div><b>Sultan Sajjadi</b><span class="role">Werkstatt</span><small>Metallbaupraktiker EBA</small></div>
+      <div class="member"><div class="ph initials">JG</div><b>Judith Gerwald</b><span class="role">Administration</span><small>Büro &amp; Organisation</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TERMIN ========== -->
+<section id="termin" class="band-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Terminbuchung</p>
+      <h2>Termin <span class="o">direkt buchen</span></h2>
+      <p>Wählen Sie Wunschtag und freien Zeitslot, geben Sie die gewünschte Leistung an – wir melden uns zur Bestätigung. Beratungstermine: Montag bis Freitag.</p>
+    </div>
+    <div class="book-grid">
+      <!-- Kalender + Slots -->
+      <div class="book-panel">
+        <h3>1 · Tag &amp; Zeit wählen</h3>
+        <p class="hint">Verfügbare Termine in der Werkstatt am Schützenweg 1.</p>
+        <div class="cal-head">
+          <button class="cal-nav" id="prevM" aria-label="Vorheriger Monat">‹</button>
+          <span class="m" id="monthLbl"></span>
+          <button class="cal-nav" id="nextM" aria-label="Nächster Monat">›</button>
+        </div>
+        <div class="cal" id="cal"></div>
+        <h3 style="margin-top:22px">2 · Zeitslot</h3>
+        <div class="slots" id="slots"><span class="slot-empty">Bitte zuerst einen Tag wählen.</span></div>
+      </div>
+
+      <!-- Formular -->
+      <div class="book-panel" id="formPanel">
+        <h3>3 · Ihre Angaben</h3>
+        <p class="hint">Wir bestätigen Ihren Wunschtermin telefonisch oder per E-Mail.</p>
+        <div class="summary empty" id="summary">Noch kein Termin gewählt.</div>
+        <div class="field">
+          <label for="service">Leistung</label>
+          <select id="service">
+            <option value="">Bitte wählen …</option>
+            <option>Geländer</option><option>Treppe</option><option>Balkon</option>
+            <option>Vordach</option><option>Carport</option><option>Türen + Fenster</option>
+            <option>Pergola</option><option>Webnet-Geländer</option><option>Chromstahl-Arbeiten</option>
+            <option>Blecharbeiten</option><option>Stahlbau</option><option>Allgemeine Beratung</option>
+          </select>
+        </div>
+        <div class="two">
+          <div class="field"><label for="vorname">Vorname *</label><input id="vorname" type="text"></div>
+          <div class="field"><label for="name">Name *</label><input id="name" type="text"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="tel">Telefon *</label><input id="tel" type="tel"></div>
+          <div class="field"><label for="email">E-Mail *</label><input id="email" type="email"></div>
+        </div>
+        <div class="field"><label for="msg">Nachricht</label><textarea id="msg" placeholder="Kurz zu Ihrem Projekt …"></textarea></div>
+        <button class="btn btn-primary" id="bookBtn" style="width:100%;justify-content:center">Termin jetzt buchen</button>
+        <p class="note">Nach dem Absenden erhalten Sie sofort Ihre Terminbestätigung. Eine E-Mail-Bestätigung folgt in Kürze.</p>
+        <div class="ok-msg" id="okMsg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== KONTAKT ========== -->
+<section id="kontakt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Kontakt</p>
+      <h2>So erreichen Sie <span class="o">die Eisenmänner</span></h2>
+      <p>Für Anfragen kontaktieren Sie uns telefonisch, per E-Mail oder über die Terminbuchung.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Studer &amp; Staub Metallbau GmbH</h3>
+        <div class="cline"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.7 7-12a7 7 0 1 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div><b>Schützenweg 1</b><br>CH-4528 Zuchwil</div></div>
+        <div class="cline"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h5l2 5-3 2a14 14 0 0 0 6 6l2-3 5 2v5a2 2 0 0 1-2 2A18 18 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>
+          <div><b><a href="tel:+41792886092">079 288 60 92</a></b> · Gabriel Studer</div></div>
+        <div class="cline"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z M4 4l8 7 8-7"/></svg>
+          <div><b><a href="mailto:info@eisenmaenner.ch">info@eisenmaenner.ch</a></b></div></div>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Studer+%26+Staub+Metallbau+Sch%C3%BCtzenweg+1+4528+Zuchwil" target="_blank" rel="noopener" style="margin-top:8px">Auf Karte ansehen</a>
+        <div class="persons">
+          <div class="person"><b>Gabriel Studer</b><a href="tel:+41792886092">079 288 60 92</a><a href="mailto:info@eisenmaenner.ch">info@eisenmaenner.ch</a></div>
+          <div class="person"><b>Benjamin Staub</b><a href="tel:+41792625228">079 262 52 28</a><a href="mailto:staub@eisenmaenner.ch">staub@eisenmaenner.ch</a></div>
+        </div>
+      </div>
+      <div class="contact-card" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:var(--panel-2)">
+        <p class="eyebrow">Werkstatt &amp; Halle</p>
+        <h3 style="font-size:1.7rem;line-height:1.05;margin-bottom:10px">Seit September 2024<br>am Schützenweg 1</h3>
+        <p style="color:var(--ink-dim);margin-top:0">Unsere Firma ist im September 2024 in die neu gebaute Halle am Schützenweg 1 in Zuchwil umgezogen, die gemeinsam mit der Firma Jura Holzbau geplant und errichtet wurde.</p>
+        <a class="btn btn-primary" href="#termin" style="margin-top:14px">Beratungstermin buchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MODAL / OVERLAY ========== -->
+<div class="modal-ov" id="refModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Schliessen">×</button>
+    <div class="modal-hero">
+      <img id="modalImg" src="" alt="">
+      <div class="htitle">
+        <p class="eyebrow" id="modalEyebrow">Referenz</p>
+        <h3 id="modalTitle">Titel</h3>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="modalText"></div>
+      <div class="modal-gallery" id="modalGallery"></div>
+      <div class="modal-cta">
+        <a class="btn btn-primary" id="modalBook" href="#termin">Termin für diese Leistung buchen</a>
+        <button class="btn btn-ghost" id="modalCloseBtn" type="button">Schliessen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px">
+          <svg class="mask" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="6" width="36" height="50" rx="14" fill="none" stroke="#f4f0e7" stroke-width="3"/><rect x="20" y="22" width="24" height="13" rx="3" fill="none" stroke="#ee7a1e" stroke-width="3"/><line x1="26" y1="28.5" x2="38" y2="28.5" stroke="#f4f0e7" stroke-width="2.5"/></svg>
+          <span><b style="font-family:Anton;font-size:1.3rem">EISENMÄNNER</b><small style="display:block;font-family:'Barlow Condensed';letter-spacing:2px;color:var(--ink-dim);font-size:.62rem">Studer &amp; Staub Metallbau</small></span>
+        </div>
+        <p>Metallbau- und Schlossereiarbeiten in Stahl und Chromstahl – von der Planung über die Produktion bis zur Montage. Für Architekten und private Bauherren in der Region Solothurn.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#angebot">Angebot</a></li>
+          <li><a href="#referenzen">Referenzen</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#termin">Termin buchen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Schützenweg 1</li>
+          <li>CH-4528 Zuchwil</li>
+          <li><a href="tel:+41792886092">079 288 60 92</a></li>
+          <li><a href="mailto:info@eisenmaenner.ch">info@eisenmaenner.ch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Studer &amp; Staub Metallbau GmbH · Vertretungsberechtigt: Gabriel Studer, Jonas Studer, Benjamin Staub</span>
+      <span>Impressum · Datenschutz</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var MONTHS=["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+  var DOW=["Mo","Di","Mi","Do","Fr","Sa","So"];
+  var SLOTS=["07:30","08:30","09:30","10:30","13:30","14:30","15:30","16:30"];
+  var today=new Date(); today.setHours(0,0,0,0);
+  var view=new Date(today.getFullYear(),today.getMonth(),1);
+  var sel={date:null,slot:null};
+
+  var calEl=document.getElementById('cal');
+  var monthLbl=document.getElementById('monthLbl');
+  var slotsEl=document.getElementById('slots');
+  var prevM=document.getElementById('prevM');
+  var nextM=document.getElementById('nextM');
+
+  function pad(n){return n<10?'0'+n:''+n;}
+  function fmt(d){return pad(d.getDate())+'.'+pad(d.getMonth()+1)+'.'+d.getFullYear();}
+  function weekdayLong(d){return ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"][d.getDay()];}
+  // deterministischer "Belegt"-Status, damit es realistisch wirkt
+  function slotTaken(d,i){var s=(d.getFullYear()*37+(d.getMonth()+1)*101+d.getDate()*17+i*13);return (s%10)<3;}
+
+  function renderCal(){
+    monthLbl.textContent=MONTHS[view.getMonth()]+' '+view.getFullYear();
+    calEl.innerHTML='';
+    DOW.forEach(function(d){var e=document.createElement('div');e.className='dow';e.textContent=d;calEl.appendChild(e);});
+    var first=new Date(view.getFullYear(),view.getMonth(),1);
+    var startIdx=(first.getDay()+6)%7; // Montag = 0
+    for(var i=0;i<startIdx;i++){var e=document.createElement('div');e.className='empty';calEl.appendChild(e);}
+    var days=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+    for(var day=1;day<=days;day++){
+      var d=new Date(view.getFullYear(),view.getMonth(),day);
+      var btn=document.createElement('button');
+      btn.className='day';btn.textContent=day;
+      var isWeekend=(d.getDay()===0||d.getDay()===6);
+      var isPast=d<today;
+      if(isWeekend||isPast){btn.disabled=true;}
+      else{
+        btn.addEventListener('click',(function(dd,b){return function(){
+          Array.prototype.forEach.call(calEl.querySelectorAll('.day.sel'),function(x){x.classList.remove('sel');});
+          b.classList.add('sel');sel.date=dd;sel.slot=null;renderSlots(dd);updateSummary();
+        };})(d,btn));
+      }
+      if(sel.date&&d.getTime()===sel.date.getTime())btn.classList.add('sel');
+      calEl.appendChild(btn);
+    }
+    // Vor-Monats-Navigation nur ab aktuellem Monat
+    var cur=new Date(today.getFullYear(),today.getMonth(),1);
+    prevM.disabled=(view<=cur);
+  }
+
+  function renderSlots(d){
+    slotsEl.innerHTML='';
+    var any=false;
+    SLOTS.forEach(function(t,i){
+      var b=document.createElement('button');b.className='slot';b.textContent=t;
+      if(slotTaken(d,i)){b.disabled=true;}
+      else{
+        any=true;
+        b.addEventListener('click',function(){
+          Array.prototype.forEach.call(slotsEl.querySelectorAll('.slot.sel'),function(x){x.classList.remove('sel');});
+          b.classList.add('sel');sel.slot=t;updateSummary();
+        });
+      }
+      slotsEl.appendChild(b);
+    });
+    if(!any){slotsEl.innerHTML='<span class="slot-empty">An diesem Tag ausgebucht – bitte anderen Tag wählen.</span>';}
+  }
+
+  function updateSummary(){
+    var s=document.getElementById('summary');
+    if(sel.date&&sel.slot){
+      s.className='summary';
+      s.innerHTML='Gewählt: <b>'+weekdayLong(sel.date)+', '+fmt(sel.date)+'</b> um <b>'+sel.slot+' Uhr</b>';
+    }else if(sel.date){
+      s.className='summary';
+      s.innerHTML='Tag: <b>'+weekdayLong(sel.date)+', '+fmt(sel.date)+'</b> – bitte noch Zeitslot wählen.';
+    }else{
+      s.className='summary empty';s.textContent='Noch kein Termin gewählt.';
+    }
+  }
+
+  prevM.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCal();});
+  nextM.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCal();});
+
+  document.getElementById('bookBtn').addEventListener('click',function(){
+    var vorname=document.getElementById('vorname').value.trim();
+    var name=document.getElementById('name').value.trim();
+    var tel=document.getElementById('tel').value.trim();
+    var email=document.getElementById('email').value.trim();
+    var service=document.getElementById('service').value;
+    var msg=document.getElementById('msg').value.trim();
+    var ok=document.getElementById('okMsg');
+    var errs=[];
+    if(!sel.date||!sel.slot)errs.push('Wunschtermin (Tag &amp; Zeit)');
+    if(!service)errs.push('Leistung');
+    if(!vorname)errs.push('Vorname');
+    if(!name)errs.push('Name');
+    if(!tel)errs.push('Telefon');
+    if(!email)errs.push('E-Mail');
+    if(errs.length){
+      ok.className='ok-msg show';
+      ok.style.borderColor='#e0552b';
+      ok.innerHTML='<b>Bitte noch ergänzen:</b> '+errs.join(', ')+'.';
+      return;
+    }
+    var when=weekdayLong(sel.date)+', '+fmt(sel.date)+' um '+sel.slot+' Uhr';
+    function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+    var panel=document.getElementById('formPanel');
+    panel.innerHTML=
+      '<div class="booked">'+
+        '<div class="booked-check">'+
+          '<svg viewBox="0 0 52 52" width="58" height="58" aria-hidden="true">'+
+            '<circle cx="26" cy="26" r="24" fill="none" stroke="#ee7a1e" stroke-width="3"/>'+
+            '<path d="M16 27 l7 7 14-16" fill="none" stroke="#ee7a1e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'+
+          '</svg>'+
+        '</div>'+
+        '<h3 style="font-size:1.7rem">Vielen Dank, '+esc(vorname)+'!</h3>'+
+        '<p class="booked-sub">Ihr Termin ist gebucht.</p>'+
+        '<div class="booked-card">'+
+          '<div class="booked-row"><span>Termin</span><b>'+esc(when)+'</b></div>'+
+          '<div class="booked-row"><span>Leistung</span><b>'+esc(service)+'</b></div>'+
+          '<div class="booked-row"><span>Auf den Namen</span><b>'+esc(vorname+' '+name)+'</b></div>'+
+        '</div>'+
+        '<p class="booked-note">Eine E-Mail-Bestätigung an <b>'+esc(email)+'</b> folgt in Kürze. Bei Fragen erreichen Sie uns unter <a href="tel:+41792886092">079 288 60 92</a> oder <a href="mailto:info@eisenmaenner.ch">info@eisenmaenner.ch</a>.</p>'+
+        '<button class="btn btn-ghost" id="againBtn" style="margin-top:6px">Weiteren Termin buchen</button>'+
+      '</div>';
+    document.getElementById('againBtn').addEventListener('click',function(){location.reload();});
+    document.getElementById('termin').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  // ---------- Referenz-Overlay ----------
+  var REF={
+    balkon:{label:'Balkone',sub:'Metall-Balkone',service:'Balkon',hero:'assets/ref/balkon.jpg',
+      text:['Ein Balkon vergrössert Ihre Wohnfläche und bietet Ihnen die Möglichkeit, auch in urbanem Raum einen privaten Aussenplatz zu geniessen und vielleicht sogar ein eigenes kleines Gartenparadies anzulegen.',
+            'Wir planen und bauen Ihren individuellen Balkon an Ihr bestehendes Gebäude, was eine Aufwertung Ihrer Wohnung sowie eine enorme Verbesserung Ihrer Wohnqualität bedeutet. Natürlich fertigen wir auch Balkone für Neubauten an.'],
+      imgs:['assets/gallery/balkon_1.jpg','assets/gallery/balkon_2.jpg','assets/gallery/balkon_3.jpg']},
+    treppe:{label:'Treppen',sub:'Metall-Treppen im Innen- und Aussenbereich',service:'Treppe',hero:'assets/ref/treppe.jpg',
+      text:['Wir planen und bauen Metalltreppen in allen Grössen und Varianten – mit Stufen in Holz, Metall, Glas, Stein oder Beton. Natürlich fertigen wir Treppen für den Aussen- sowie für den Innenbereich.',
+            'Mit unserer Erfahrung im Treppenbau setzen wir Ihre Wünsche und Vorstellungen in die Tat um.'],
+      imgs:['assets/gallery/treppe_1.jpg','assets/gallery/treppe_2.jpg','assets/gallery/treppe_3.jpg']},
+    gelaender:{label:'Geländer',sub:'Geländer aus Metall',service:'Geländer',hero:'assets/ref/gelaender.jpg',
+      text:['Ein Metallgeländer kann in unzähligen Arten und Varianten ausgeführt und mit Füllungen in Holz, Glas, Lochblech oder Webnet kombiniert werden. Ein Geländer ist einerseits ein Sicherheitselement, durch seine Form und Gestaltung kann es Ihr Gebäude als gestalterisches Element aber auch optisch aufwerten.',
+            'Wir haben langjährige Erfahrung im Planen und Bauen von Treppengeländern, Balkongeländern und Geländern im Gartenbereich. Die Geländer von Studer & Staub Metallbau erfüllen natürlich alle notwendigen Sicherheitskriterien.'],
+      imgs:['assets/gallery/gelaender_1.jpg','assets/gallery/gelaender_2.jpg','assets/gallery/gelaender_3.jpg']},
+    vordach:{label:'Vordächer',sub:'Vordächer aus Metall',service:'Vordach',hero:'assets/ref/vordach.jpg',
+      text:['Ein Vordach bietet Wetterschutz beim Hauseingang, auf dem Sitzplatz, der Veranda oder dem Balkon. Durch eine Überdachung Ihres Veloständers lassen wir auch Ihre Fahrräder nicht im Regen stehen.',
+            'Durch die unzähligen Möglichkeiten in der Ausführung und unsere Erfahrung finden wir für jede Situation die ideale Lösung.'],
+      imgs:['assets/gallery/vordach_1.jpg','assets/gallery/vordach_2.jpg','assets/gallery/vordach_3.jpg']},
+    carport:{label:'Carports',sub:'Carports aus Metall',service:'Carport',hero:'assets/ref/carport.jpg',
+      text:['Carports erfüllen Schutzfunktionen für Autos, Fahrräder und Gerätschaften. Als Anbau sind sie zudem ein ästhetisches Element an Ihrem Haus.',
+            'Die Grundkonstruktion, in der Regel verzinkt, optional mit Farbbeschichtung, erlaubt Bedachungen mit Wellblech, Glas oder Dachbegrünung. Wir planen und bauen Ihren individuellen Carport, natürlich optimiert auf Ihre Bedürfnisse.'],
+      imgs:['assets/gallery/carport_1.jpg','assets/gallery/carport_2.jpg','assets/gallery/carport_3.jpg']},
+    webnet:{label:'Webnet',sub:'Webnet – das vielseitige Drahtseilnetz',service:'Webnet-Geländer',hero:'assets/ref/webnet.jpg',
+      text:['Biegsame, transparente Netzstrukturen aus Edelstahlseilen sind multifunktional und langlebig.',
+            'An Geländern oder in Treppenaufgängen montiert, geben sie Halt und Führung, an Fassaden können sie als Kletterhilfe für Pflanzen dienen, in grossen Räumen als Trennelemente filigrane Akzente setzen.'],
+      imgs:['assets/gallery/webnet_1.jpg','assets/gallery/webnet_2.jpg','assets/gallery/webnet_3.jpg']},
+    tueren:{label:'Türen + Fenster',sub:'Türen / Brandschutztüren und Fenster aus Stahl',service:'Türen + Fenster',hero:'assets/ref/tueren.jpg',
+      text:['Türen aus Stahl sind robust, wirken aber trotzdem filigran. Ob als Hauseingang mit thermischer Trennung oder als einfache Abtrennung im Innen- oder Aussenbereich – Metalltüren bieten sich für verschiedenste Einsatzbereiche an.',
+            'Studer & Staub Metallbau fertigt für Sie auch massgeschneiderte Brandschutztüren in EI 30 und EI 60, mit oder ohne Panikfunktionen.'],
+      imgs:['assets/gallery/tueren_1.jpg','assets/gallery/tueren_2.jpg','assets/gallery/tueren_3.jpg']},
+    pergola:{label:'Pergolas',sub:'Pergolas aus Metall',service:'Pergola',hero:'assets/ref/pergola.jpg',
+      text:['Eine Metall-Pergola, mit Drähten oder Seilen bespannt, dient als Rankhilfe für Schatten spendende Pflanzen oder schlicht als Verschönerung Ihres Sitzplatzes.',
+            'Sie wird oft auch als Unterkonstruktion für Sonnensegel oder Markisen eingesetzt.'],
+      imgs:['assets/gallery/pergola_1.jpg','assets/gallery/pergola_2.jpg','assets/gallery/pergola_3.jpg']}
+  };
+  var ov=document.getElementById('refModal');
+  var lastFocus=null;
+  function openModal(cat){
+    var d=REF[cat]; if(!d) return;
+    lastFocus=document.activeElement;
+    document.getElementById('modalEyebrow').textContent='Referenz · '+d.label;
+    document.getElementById('modalTitle').textContent=d.sub;
+    var img=document.getElementById('modalImg');img.src=d.hero;img.alt=d.sub;
+    document.getElementById('modalText').innerHTML=d.text.map(function(t){return '<p>'+t+'</p>';}).join('');
+    document.getElementById('modalGallery').innerHTML=d.imgs.map(function(s,k){return '<img src="'+s+'" alt="'+d.label+' Beispiel '+(k+1)+'" loading="lazy">';}).join('');
+    document.getElementById('modalBook').setAttribute('data-service',d.service);
+    ov.classList.add('open');document.body.classList.add('no-scroll');
+    document.getElementById('modalClose').focus();
+  }
+  function closeModal(){ov.classList.remove('open');document.body.classList.remove('no-scroll');if(lastFocus)lastFocus.focus();}
+  Array.prototype.forEach.call(document.querySelectorAll('.ref'),function(b){
+    b.addEventListener('click',function(){openModal(b.getAttribute('data-cat'));});
+  });
+  document.getElementById('modalClose').addEventListener('click',closeModal);
+  document.getElementById('modalCloseBtn').addEventListener('click',closeModal);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('open'))closeModal();});
+  document.getElementById('modalBook').addEventListener('click',function(){
+    var svc=this.getAttribute('data-service');
+    var sel=document.getElementById('service');
+    if(sel){for(var i=0;i<sel.options.length;i++){if(sel.options[i].value===svc){sel.selectedIndex=i;break;}}}
+    lastFocus=null;closeModal();
+  });
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  renderCal();
+})();
+</script>
+</body>
+</html>
